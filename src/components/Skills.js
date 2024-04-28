@@ -66,9 +66,8 @@ export default function Skills() {
           </Col>
         </Row>
       </Container>
-
       <img
-        className="background-mage-left"
+        className="background-image-left"
         src={colorSharp}
         alt="color-sharp"
       />
