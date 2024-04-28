@@ -21,7 +21,8 @@ export default function Banner() {
     return () => {
       clearInterval(ticker);
     };
-  }, [text]);
+    // eslint-disable-next-line
+  }, [text, delta]);
 
   const tick = () => {
     let i = loopNum % toRotate.length;
