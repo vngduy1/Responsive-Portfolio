@@ -3,6 +3,8 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Nav from "react-bootstrap/Nav";
 import Tab from "react-bootstrap/Tab";
+import "animate.css";
+import TrackVisibility from "react-on-screen";
 
 import ProjectCard from "./ProjectCard";
 import colorSharp2 from "../assets/img/color-sharp2.png";
@@ -34,12 +36,23 @@ export default function Projects() {
       <Container>
         <Row>
           <Col>
-            <h2>Projects</h2>
-            <p>
-              Chat project enables real-time communication, enhancing
-              connectivity and collaboration. Utilizing modern technologies, it
-              offers seamless messaging experience with robust security features
-            </p>
+            <TrackVisibility>
+              {({ isVisible }) => (
+                <div
+                  className={
+                    isVisible ? "animate__animated animate__slideInUp" : ""
+                  }
+                >
+                  <h2>Projects</h2>
+                  <p>
+                    Chat project enables real-time communication, enhancing
+                    connectivity and collaboration. Utilizing modern
+                    technologies, it offers seamless messaging experience with
+                    robust security features
+                  </p>
+                </div>
+              )}
+            </TrackVisibility>
 
             <Tab.Container id="projects-tabs" defaultActiveKey="first">
               <Nav

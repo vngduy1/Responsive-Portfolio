@@ -3,6 +3,9 @@ import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 import { ArrowRightCircle } from "react-bootstrap-icons";
+import "animate.css";
+import TrackVisibility from "react-on-screen";
+
 import headerImg from "../assets/img/header-img.svg";
 
 export default function Banner() {
@@ -51,22 +54,32 @@ export default function Banner() {
       <Container>
         <Row className="align-items-center">
           <Col xs={12} md={6} xl={7}>
-            <span className="tagline">Welcome to my Portfolio</span>
-            <h1>
-              {`Hi I'm DVN `} <span className="wrap">{text}</span>
-            </h1>
-            <p>
-              Hello! I'm an AI language model developed by OpenAI known as
-              ChatGPT. I'm designed to assist users like you by providing
-              information, answering questions, and engaging in conversations on
-              a wide range of topics. With access to vast amounts of text data,
-              I can generate human-like responses and adapt to different
-              contexts. My goal is to help you with any queries or tasks you
-              have. Feel free to ask me anything!
-            </p>
-            <button onClick={() => console.log("conner")}>
-              Let's connect <ArrowRightCircle size={25} />{" "}
-            </button>
+            <TrackVisibility>
+              {({ isVisible }) => (
+                <div
+                  className={
+                    isVisible ? "animate__animated animate__fadeIn" : ""
+                  }
+                >
+                  <span className="tagline">Welcome to my Portfolio</span>
+                  <h1>
+                    {`Hi I'm DVN `} <span className="wrap">{text}</span>
+                  </h1>
+                  <p>
+                    Hello! I'm an AI language model developed by OpenAI known as
+                    ChatGPT. I'm designed to assist users like you by providing
+                    information, answering questions, and engaging in
+                    conversations on a wide range of topics. With access to vast
+                    amounts of text data, I can generate human-like responses
+                    and adapt to different contexts. My goal is to help you with
+                    any queries or tasks you have. Feel free to ask me anything!
+                  </p>
+                  <button onClick={() => console.log("conner")}>
+                    Let's connect <ArrowRightCircle size={25} />{" "}
+                  </button>
+                </div>
+              )}
+            </TrackVisibility>
           </Col>
           <Col xs={12} md={6} xl={5}>
             <img src={headerImg} alt="Header Img" />
