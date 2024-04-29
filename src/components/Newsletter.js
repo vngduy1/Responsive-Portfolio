@@ -7,7 +7,7 @@ export default function Newsletter({ onValidated, status, message }) {
 
   useEffect(() => {
     if (status === "success") clearFields();
-  }, []);
+  }, [status]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

@@ -68,3 +68,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### `Email Server`
+
+(https://mailchimp.com/landers/email-marketing-platform/?ds_c=DEPT_AOC_Google_Search_ROW_EN_Brand_Acquire_Omega_NE_T5&ds_kids=p78398388013&ds_a_lid=kwd-2285511033&ds_cid=71700000115488131&ds_agid=58700008588589672&gad_source=1&gclid=CjwKCAjw57exBhAsEiwAaIxaZlAA1-FE9wAtllAICv1oUHXI8tYTS1HyyGuw2wHZ5CoUmxyLh9pzPhoC_pUQAvD_BwE&gclsrc=aw.ds)
