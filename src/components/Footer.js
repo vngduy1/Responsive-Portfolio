@@ -7,8 +7,12 @@ import logo from "../assets/img/logo.svg";
 import navIcon1 from "../assets/img/nav-icon1.svg";
 import navIcon2 from "../assets/img/nav-icon2.svg";
 import navIcon3 from "../assets/img/nav-icon3.svg";
+import { useSelector } from "react-redux";
+import { getTranslation } from "../languages";
 
 export default function Footer() {
+  const language = useSelector((state) => state.language.language);
+
   return (
     <footer className="footer">
       <Container>
@@ -29,7 +33,7 @@ export default function Footer() {
                 <img src={navIcon3} alt="nav-icon3" />
               </a>
             </div>
-            <p>CopyRight 2022. All Right Reserved</p>
+            <p>{getTranslation(language, "footer")} </p>
           </Col>
         </Row>
       </Container>

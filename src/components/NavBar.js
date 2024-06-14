@@ -6,11 +6,20 @@ import logo from "../assets/img/logo.svg";
 import navIcon1 from "../assets/img/nav-icon1.svg";
 import navIcon2 from "../assets/img/nav-icon2.svg";
 import navIcon3 from "../assets/img/nav-icon3.svg";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleLanguages } from "../redux/languages/languageSlice";
+import { getTranslation } from "../languages";
 
 function NavBar() {
   const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
+  const dispatch = useDispatch();
+  const language = useSelector((state) => state.language.language);
 
+  const handleLanguageChange = (e) => {
+    const selectedLanguage = e.target.value;
+    dispatch(toggleLanguages(selectedLanguage));
+  };
   useEffect(() => {
     const onScroll = () => {
       if (window.scrollY > 50) {
@@ -31,7 +40,7 @@ function NavBar() {
 
   return (
     <Navbar expand="lg" className={scrolled ? "scroller" : ""}>
-      <Container>
+      <Container style={{ whiteSpace: "nowrap" }}>
         <Navbar.Brand href="#home">
           <img src={logo} alt="logo" />
         </Navbar.Brand>
@@ -47,7 +56,7 @@ function NavBar() {
               }
               onClick={() => onUpdateActiveLink("home")}
             >
-              Home
+              {getTranslation(language, "navbar.home")}
             </Nav.Link>
             <Nav.Link
               href="#skills"
@@ -56,7 +65,7 @@ function NavBar() {
               }
               onClick={() => onUpdateActiveLink("skills")}
             >
-              Skills
+              {getTranslation(language, "navbar.skill")}
             </Nav.Link>
             <Nav.Link
               href="#projects"
@@ -65,23 +74,39 @@ function NavBar() {
               }
               onClick={() => onUpdateActiveLink("projects")}
             >
-              Projects
+              {getTranslation(language, "navbar.project")}
             </Nav.Link>
           </Nav>
           <span className="navbar-text">
             <div className="social-icon">
-              <a href="#linkIn">
+              <a href="#linkIn" target="_blank" rel="noopener noreferrer">
                 <img src={navIcon1} alt="linkIn" />
               </a>
-              <a href="#facebook">
+              <a
+                href="https://www.facebook.com/akira.hanatsuki/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img src={navIcon2} alt="facebook" />
               </a>
-              <a href="#instagram">
+              <a
+                href="https://www.instagram.com/gokku_zui/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img src={navIcon3} alt="instagram" />
               </a>
             </div>
-            <button className="vvd" onClick={() => console.log("connect")}>
-              <span>Let's Connect</span>
+            <select value={language} onChange={handleLanguageChange}>
+              <option value="vi"> VietNam</option>
+              <option value="jp"> 日本語</option>
+              <option value="en"> English</option>
+            </select>
+            <button
+              className="vvd"
+              onClick={() => onUpdateActiveLink("connect")}
+            >
+              <span>{getTranslation(language, "navbar.connect")}</span>
             </button>
           </span>
         </Navbar.Collapse>
