@@ -7,11 +7,19 @@ import "animate.css";
 import TrackVisibility from "react-on-screen";
 
 import headerImg from "../assets/img/header-img.svg";
+import { useSelector } from "react-redux";
+import { getTranslation } from "../languages";
 
 export default function Banner() {
+  const language = useSelector((state) => state.language.language);
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const toRotate = ["Web developer", "Web Designer", "UI/UX Designer"];
+  const web = getTranslation(language, "banner.web");
+  const engineer = getTranslation(language, "banner.engineer");
+  const program = getTranslation(language, "banner.program");
+  const name = getTranslation(language, "banner.name");
+  // const toRotate = ["Web developer", "Backend developer", "FontEnd Developer"];
+  const toRotate = [web, engineer, program];
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const period = 2000;
@@ -61,21 +69,18 @@ export default function Banner() {
                     isVisible ? "animate__animated animate__fadeIn" : ""
                   }
                 >
-                  <span className="tagline">Welcome to my Portfolio</span>
+                  <span className="tagline">
+                    {getTranslation(language, "banner.portfolio")}
+                  </span>
                   <h1>
-                    {`Hi I'm DVN `} <span className="wrap">{text}</span>
+                    {name} <span className="wrap">{text}</span>
                   </h1>
-                  <p>
-                    Hello! I'm an AI language model developed by OpenAI known as
-                    ChatGPT. I'm designed to assist users like you by providing
-                    information, answering questions, and engaging in
-                    conversations on a wide range of topics. With access to vast
-                    amounts of text data, I can generate human-like responses
-                    and adapt to different contexts. My goal is to help you with
-                    any queries or tasks you have. Feel free to ask me anything!
-                  </p>
+                  <p>{getTranslation(language, "banner.intro1")}</p>
+                  <p>{getTranslation(language, "banner.intro2")}</p>
+                  <p>{getTranslation(language, "banner.intro3")}</p>
                   <button onClick={() => console.log("conner")}>
-                    Let's connect <ArrowRightCircle size={25} />{" "}
+                    {getTranslation(language, "banner.connect")}
+                    <ArrowRightCircle size={25} />{" "}
                   </button>
                 </div>
               )}

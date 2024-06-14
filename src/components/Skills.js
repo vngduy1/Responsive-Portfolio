@@ -8,8 +8,11 @@ import meter1 from "../assets/img/meter1.svg";
 import meter2 from "../assets/img/meter2.svg";
 import meter3 from "../assets/img/meter3.svg";
 import colorSharp from "../assets/img/color-sharp.png";
+import { useSelector } from "react-redux";
+import { getTranslation } from "../languages";
 
 export default function Skills() {
+  const language = useSelector((state) => state.language.language);
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -36,13 +39,8 @@ export default function Skills() {
         <Row>
           <Col>
             <div className="skill-bx">
-              <h2>Skills</h2>
-              <p>
-                Developer possesses skills in coding, problem-solving, and
-                collaboration, adept in languages like Java, Python, and
-                JavaScript, with experience in web development and agile
-                methodologies.
-              </p>
+              <h2>{getTranslation(language, "skill.skill")}</h2>
+              <p>{getTranslation(language, "skill.intro")}</p>
 
               <Carousel
                 responsive={responsive}
@@ -51,15 +49,15 @@ export default function Skills() {
               >
                 <div className="item">
                   <img src={meter1} alt="meter1" />
-                  <h5>Web Development</h5>
-                </div>
-                <div className="item">
-                  <img src={meter2} alt="meter2" />
                   <h5>JavaScript</h5>
                 </div>
                 <div className="item">
+                  <img src={meter2} alt="meter2" />
+                  <h5>ReactJs</h5>
+                </div>
+                <div className="item">
                   <img src={meter3} alt="meter3" />
-                  <h5>React</h5>
+                  <h5>NodeJs</h5>
                 </div>
               </Carousel>
             </div>

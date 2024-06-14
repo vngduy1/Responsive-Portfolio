@@ -2,7 +2,10 @@ import Col from "react-bootstrap/esm/Col";
 import Row from "react-bootstrap/esm/Row";
 import Alert from "react-bootstrap/esm/Alert";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { getTranslation } from "../languages";
 export default function Newsletter({ onValidated, status, message }) {
+  const language = useSelector((state) => state.language.language);
   const [email, setEmail] = useState("");
 
   useEffect(() => {
@@ -27,8 +30,10 @@ export default function Newsletter({ onValidated, status, message }) {
       <div className="newsletter-bx">
         <Row>
           <Col lg={12} md={6} xl={5}>
-            <h3>Subscribe to our Newsletter</h3>
-            {status === "sending" && <Alert>Sending...</Alert>}
+            <h3>{getTranslation(language, "newsletter.subscribe")} </h3>
+            {status === "sending" && (
+              <Alert>{getTranslation(language, "newsletter.sending")}</Alert>
+            )}
             {status === "error" && <Alert variant="danger">{message} </Alert>}
             {status === "success" && (
               <Alert variant="success">{message} </Alert>
@@ -42,7 +47,9 @@ export default function Newsletter({ onValidated, status, message }) {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
-                <button type="submit">Submit</button>
+                <button type="submit">
+                  {getTranslation(language, "newsletter.submit")}
+                </button>
               </div>
             </form>
           </Col>

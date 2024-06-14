@@ -1,0 +1,50 @@
+{
+  "navbar": {
+    "home": "Home",
+    "skill": "Skills",
+    "project": "Projects",
+    "connect": "Contact"
+  },
+  "contact": "Contact Us",
+  "banner": {
+    "intro1": "Hello! I am a systems engineer and web developer. As a systems engineer, I am responsible for building and maintaining complex computer systems, ranging from computer networks to critical software applications. I often work on large-scale systems that require high stability and security.",
+    "intro2": "As a web developer, I specialize in creating high-quality websites and web applications. I have in-depth knowledge of web programming languages such as HTML, CSS, and JavaScript, and I am proficient in popular frameworks like ReactJs and Vite. I am also well-versed in backend technologies such as databases and Node.js.",
+    "intro3": "With skills and knowledge in these two fields, I can participate in complex projects from building system infrastructure to developing interactive user interfaces.",
+    "connect": "Contact",
+    "web": "Web Development",
+    "engineer": "Systems Engineer",
+    "program": "Programmer",
+    "portfolio": "Welcome to my portfolio",
+    "name": "My name is Zui."
+  },
+  "skill": {
+    "skill": "Skills",
+    "intro": "As a developer, I have skills in programming, problem-solving, and collaboration, and I am proficient in languages such as Java and JavaScript. I have experience in web development."
+  },
+  "project": {
+    "project": "Projects",
+    "intro": "This is a chat project that enables real-time communication, enhancing connectivity and collaboration. It provides a seamless messaging experience with robust security features using the latest technologies.",
+    "du_an1": {
+      "title": "",
+      "description": ""
+    },
+    "du_an2": {
+      "title": "",
+      "description": ""
+    },
+    "du_an3": {
+      "title": "",
+      "description": ""
+    },
+    "tab1": "Tab One",
+    "tab2": "Tab Two",
+    "tab3": "Tab Three",
+    "no_pane": "Currently empty"
+  },
+  "newsletter": {
+    "subscribe": "Subscribe to Newsletter",
+    "sending": "Sending...",
+    "submit": "Subscribe"
+  },
+  "footer": "Copyright 2024. All rights reserved."
+}

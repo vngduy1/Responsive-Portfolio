@@ -8,31 +8,53 @@ import TrackVisibility from "react-on-screen";
 
 import ProjectCard from "./ProjectCard";
 import colorSharp2 from "../assets/img/color-sharp2.png";
-import projImg1 from "../assets/img/project-img1.png";
-import projImg2 from "../assets/img/project-img2.png";
-import projImg3 from "../assets/img/project-img3.png";
+import instagram from "../assets/img/instagram.png";
+import tiktok from "../assets/img/tiktok.png";
+import sern from "../assets/img/sern.png";
+import thread from "../assets/img/thread.png";
+import DVNBlog from "../assets/img/dvn_blog.png";
+import { useSelector } from "react-redux";
+import { getTranslation } from "../languages";
 
 export default function Projects() {
+  const language = useSelector((state) => state.language.language);
   const projects = [
     {
-      title: "Business Startup",
+      title: "SERN",
       description: "Design & Development",
-      imgUrl: projImg1,
+      imgUrl: sern,
+      link: "https://sern-fe-silk.vercel.app/home",
     },
     {
-      title: "Business Startup1",
+      title: "Instagram",
       description: "Design & Development1",
-      imgUrl: projImg2,
+      imgUrl: instagram,
+      link: "https://distagram.vercel.app/",
     },
     {
-      title: "Business Startup2",
+      title: "Tiktok",
       description: "Design & Development2",
-      imgUrl: projImg3,
+      imgUrl: tiktok,
+      link: "https://tiktok-ui-swart-nine.vercel.app/",
+    },
+  ];
+  const projects2 = [
+    {
+      title: "Thread",
+      description: "Design & Development",
+      imgUrl: thread,
+      link: "https://sern-fe-silk.vercel.app/home",
+    },
+    {
+      title: "DVNBlog",
+      description: "Design & Development1",
+      imgUrl: DVNBlog,
+      link: "https://distagram.vercel.app/",
     },
   ];
 
   return (
-    <section className="project" id="project">
+    <section className="project" id="projects">
       <Container>
         <Row>
           <Col>
@@ -43,13 +65,8 @@ export default function Projects() {
                     isVisible ? "animate__animated animate__slideInUp" : ""
                   }
                 >
-                  <h2>Projects</h2>
-                  <p>
-                    Chat project enables real-time communication, enhancing
-                    connectivity and collaboration. Utilizing modern
-                    technologies, it offers seamless messaging experience with
-                    robust security features
-                  </p>
+                  <h2>{getTranslation(language, "project.project")} </h2>
+                  <p>{getTranslation(language, "project.intro")}</p>
                 </div>
               )}
             </TrackVisibility>
@@ -61,13 +78,19 @@ export default function Projects() {
                 id="pills-tab"
               >
                 <Nav.Item>
-                  <Nav.Link eventKey="first">Tab One</Nav.Link>
+                  <Nav.Link eventKey="first">
+                    {getTranslation(language, "project.tab1")}
+                  </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="second">Tab Two</Nav.Link>
+                  <Nav.Link eventKey="second">
+                    {getTranslation(language, "project.tab2")}
+                  </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="third">Tab Three</Nav.Link>
+                  <Nav.Link eventKey="third">
+                    {getTranslation(language, "project.tab3")}
+                  </Nav.Link>
                 </Nav.Item>
               </Nav>
               <Tab.Content>
@@ -78,8 +101,16 @@ export default function Projects() {
                     })}
                   </Row>
                 </Tab.Pane>
-                <Tab.Pane eventKey={"second"}>Lorem2</Tab.Pane>
-                <Tab.Pane eventKey={"third"}>Lorem3</Tab.Pane>
+                <Tab.Pane eventKey={"second"}>
+                  <Row>
+                    {projects2.map((project, i) => {
+                      return <ProjectCard key={i} {...project} />;
+                    })}
+                  </Row>
+                </Tab.Pane>
+                <Tab.Pane eventKey={"third"}>
+                  {getTranslation(language, "project.no_pane")}
+                </Tab.Pane>
               </Tab.Content>
             </Tab.Container>
           </Col>

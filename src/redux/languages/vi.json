@@ -1,0 +1,50 @@
+{
+  "navbar": {
+    "home": "Trang chủ",
+    "skill": "Kỹ năng",
+    "project": "Dự án",
+    "connect": "Tương tác"
+  },
+  "contact": "Liên hệ với chúng tôi",
+  "banner": {
+    "intro1": "Xin chào! Tôi là một kỹ sư hệ thống và một nhà phát triển web. Trong vai trò của một kỹ sư phần mềm, tôi chịu trách nhiệm xây dựng và duy trì hệ thống máy tính phức tạp, từ các mạng lưới máy tính đến các ứng dụng phần mềm quan trọng. Tôi thường làm việc với các hệ thống lớn và đòi hỏi tính ổn định và an toàn cao.",
+    "intro2": "Như một người phát triển web, tôi chuyên về việc tạo ra các trang web và ứng dụng web chất lượng cao. Tôi có kiến thức sâu sắc về các ngôn ngữ lập trình web như HTML, CSS và JavaScript, cùng với các framework phổ biến như ReactJs và vite. Tôi cũng có kinh nghiệm trong việc làm việc với các cơ sở dữ liệu và các công nghệ back-end như Node.js",
+    "intro3": "Với kỹ năng và kiến thức của mình trong cả hai lĩnh vực này, tôi có thể tham gia vào các dự án phức tạp, từ việc xây dựng hạ tầng hệ thống đến việc phát triển giao diện người dùng tương tác.",
+    "connect": "Tương tác",
+    "web": "Phát triển Web",
+    "engineer": "Kỹ sư hệ thống",
+    "program": "Kỹ sư lập trình",
+    "portfolio": "Chào mừng đến với danh mục đầu tư của tôi",
+    "name": "Tôi là DUY, "
+  },
+  "skill": {
+    "skill": "Kỹ năng",
+    "intro": "Nhà phát triển sở hữu các kỹ năng về lập trình, giải quyết vấn đề và hợp tác,thông thạo các ngôn ngữ như Java và JavaScript. Có kinh nghiệm trong việc phát triển web."
+  },
+  "project": {
+    "project": "Dự án",
+    "intro": "Dự án chat cho phép giao tiếp thời gian thực, nâng cao khả năng kết nối và hợp tác. Sử dụng các công nghệ hiện đại, nó cung cấp trải nghiệm nhắn tin liền mạch với các tính năng bảo mật mạnh mẽ.",
+    "du_an1": {
+      "title": "",
+      "description": ""
+    },
+    "du_an2": {
+      "title": "",
+      "description": ""
+    },
+    "du_an3": {
+      "title": "",
+      "description": ""
+    },
+    "tab1": "tab một",
+    "tab2": "tab hai",
+    "tab3": "tab ba",
+    "no_pane": "Hiện tại trống"
+  },
+  "newsletter": {
+    "subscribe": "Đăng ký nhận Bản tin của chúng tôi",
+    "sending": "Gửi...",
+    "submit": "Đăng ký"
+  },
+  "footer": "Bản quyền 2024. Đã đăng ký bản quyền."
+}
