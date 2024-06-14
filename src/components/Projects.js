@@ -43,13 +43,13 @@ export default function Projects() {
       title: "Thread",
       description: "Design & Development",
       imgUrl: thread,
-      link: "https://sern-fe-silk.vercel.app/home",
+      link: "https://threads-app-jucd.onrender.com/",
     },
     {
       title: "DVNBlog",
       description: "Design & Development1",
       imgUrl: DVNBlog,
-      link: "https://distagram.vercel.app/",
+      link: "https://dvnblog.onrender.com/",
     },
   ];
 
